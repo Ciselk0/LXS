@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Fotogaléria oceľových septikov LXS 20FT, 10FT, 08FT, 05FT a našej výroby.">
+    <title>LXS – Galéria</title>
+    <!-- Písma Exo 2 a Open Sans z Google Fonts (rovnaké ako na lxs.eu) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Ikonka v karte prehliadača a na ploche mobilu -->
+    <link rel="icon" type="image/png" href="obrazky/logo/favicon.png">
+    <link rel="apple-touch-icon" href="obrazky/logo/apple-touch-icon.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- HLAVIČKA: rovnaká na každej stránke -->
+    <header>
+        <a href="index.html" class="logo"><img src="obrazky/logo/lxs_logo.png" alt="LXS"></a>
+        <button class="menu-tlacidlo" aria-label="Otvoriť menu">☰</button>
+        <nav>
+            <a href="index.html">Úvod</a>
+            <a href="vyrobky.html">Výrobky</a>
+            <a href="sluzby.html">Služby</a>
+            <a href="galeria.html" class="aktivna">Galéria</a>
+            <a href="o-nas.html">O nás</a>
+            <a href="kontakt.html">Kontakt</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Farebný pás s nadpisom stránky -->
+        <section class="uvod uvod-maly">
+            <span class="obrys-slovo" aria-hidden="true">GALÉRIA</span>
+            <div class="uvod-obsah s-obrazkom">
+                <div>
+                    <p class="cesta"><a href="index.html">Úvod</a> <span>/</span> Galéria</p>
+                    <h1>Naša výroba <strong>na vlastné oči</strong></h1>
+                    <p>Hotové septiky, schody aj zábery priamo z našej výroby a dvora v Plevníku-Drienovom.</p>
+                    <p class="pocet-fotiek"><span id="pocet">0</span> fotiek v 5 kategóriách</p>
+                    <div class="uvod-tlacidla">
+                        <a href="#fotky" class="tlacidlo">Pozrieť fotky</a>
+                    </div>
+                </div>
+                <div class="hlavicka-foto">
+                    <figure class="foto-ram f1">
+                        <div class="foto-miesto"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="5" y="13" width="38" height="27" rx="4"/><path d="M17 13l3-5h8l3 5"/><circle cx="24" cy="26" r="7"/></svg><span>zvaranie.webp</span></div>
+                        <img src="obrazky/galeria/vyroba/zvaranie.webp" alt="Zváranie vo výrobe" onerror="this.remove()">
+                        <figcaption>Zváranie vo výrobe</figcaption>
+                    </figure>
+                    <figure class="foto-ram f2">
+                        <div class="foto-miesto"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="5" y="13" width="38" height="27" rx="4"/><path d="M17 13l3-5h8l3 5"/><circle cx="24" cy="26" r="7"/></svg><span>expedicia.webp</span></div>
+                        <img src="obrazky/galeria/vyroba/expedicia.webp" alt="Pripravené na expedíciu" onerror="this.remove()">
+                        <figcaption>Pripravené na expedíciu</figcaption>
+                    </figure>
+                    <figure class="foto-ram f3">
+                        <div class="foto-miesto"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="5" y="13" width="38" height="27" rx="4"/><path d="M17 13l3-5h8l3 5"/><circle cx="24" cy="26" r="7"/></svg><span>nakladka.webp</span></div>
+                        <img src="obrazky/galeria/vyroba/nakladka.webp" alt="Nakládka na dvore" style="object-position: 50% 100%" onerror="this.remove()">
+                        <figcaption>Nakládka na dvore</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <!-- Tlačidlá na filtrovanie (ovláda ich script.js) -->
+            <div class="filtre" id="fotky">
+                <button class="filter aktivny" data-kategoria="vsetko">Všetko</button>
+                <button class="filter" data-kategoria="20ft">20 FT</button>
+                <button class="filter" data-kategoria="10ft">10 FT</button>
+                <button class="filter" data-kategoria="08ft">08 FT</button>
+                <button class="filter" data-kategoria="05ft">05 FT</button>
+                <button class="filter" data-kategoria="vyroba">Výroba</button>
+            </div>
+
+            <!-- Fotky: data-kategoria hovorí, do ktorej skupiny fotka patrí.
+                 Zástupné fotky nahradíme skutočnými z obrazky/galeria/20ft atď. -->
+            <!-- Mozaika: položky s triedou "velka" zaberajú 2 × 2 políčka -->
+            <div class="galeria mozaika">
+                <figure class="g-polozka velka">
+                    <img src="obrazky/galeria/vyroba/expedicia.webp" alt="Septiky pripravené na expedíciu" data-kategoria="vyroba">
+                    <figcaption><span>Septiky pripravené na expedíciu</span><b aria-hidden="true">+</b></figcaption>
+                </figure>
+                <figure class="g-polozka">
+                    <img src="obrazky/galeria/vyroba/nakladka.webp" alt="Nakládka septiku žeriavom na dvore" data-kategoria="vyroba">
+                    <figcaption><span>Nakládka septiku žeriavom na dvore</span><b aria-hidden="true">+</b></figcaption>
+                </figure>
+                <figure class="g-polozka">
+                    <img src="obrazky/galeria/vyroba/zvaranie.webp" alt="Zváranie vo výrobe" data-kategoria="vyroba">
+                    <figcaption><span>Zváranie vo výrobe</span><b aria-hidden="true">+</b></figcaption>
+                </figure>
+                <figure class="g-polozka">
+                    <img src="https://picsum.photos/800/600?random=1" alt="20 FT – zástupná fotka" data-kategoria="20ft">
+                    <figcaption><span>20 FT – zástupná fotka</span><b aria-hidden="true">+</b></figcaption>
+                </figure>
+                <figure class="g-polozka">
+                    <img src="https://picsum.photos/800/600?random=2" alt="20 FT – zástupná fotka" data-kategoria="20ft">
+                    <figcaption><span>20 FT – zástupná fotka</span><b aria-hidden="true">+</b></figcaption>
+                </figure>
+                <figure class="g-polozka velka">
+                    <img src="https://picsum.photos/800/600?random=3" alt="10 FT – zástupná fotka" data-kategoria="10ft">
+                    <figcaption><span>10 FT – zástupná fotka</span><b aria-hidden="true">+</b></figcaption>
+                </figure>
+                <figure class="g-polozka">
+                    <img src="https://picsum.photos/800/600?random=4" alt="10 FT – zástupná fotka" data-kategoria="10ft">
+                    <figcaption><span>10 FT – zástupná fotka</span><b aria-hidden="true">+</b></figcaption>
+                </figure>
+                <figure class="g-polozka">
+                    <img src="https://picsum.photos/800/600?random=5" alt="08 FT – zástupná fotka" data-kategoria="08ft">
+                    <figcaption><span>08 FT – zástupná fotka</span><b aria-hidden="true">+</b></figcaption>
+                </figure>
+                <figure class="g-polozka">
+                    <img src="https://picsum.photos/800/600?random=6" alt="08 FT – zástupná fotka" data-kategoria="08ft">
+                    <figcaption><span>08 FT – zástupná fotka</span><b aria-hidden="true">+</b></figcaption>
+                </figure>
+                <figure class="g-polozka">
+                    <img src="https://picsum.photos/800/600?random=7" alt="05 FT – zástupná fotka" data-kategoria="05ft">
+                    <figcaption><span>05 FT – zástupná fotka</span><b aria-hidden="true">+</b></figcaption>
+                </figure>
+                <figure class="g-polozka">
+                    <img src="https://picsum.photos/800/600?random=8" alt="05 FT – zástupná fotka" data-kategoria="05ft">
+                    <figcaption><span>05 FT – zástupná fotka</span><b aria-hidden="true">+</b></figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <!-- INSTAGRAM -->
+        <section class="strojovy-park instagram">
+            <div class="instagram-obsah">
+                <svg class="instagram-ikona" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+                <div>
+                    <h2>Viac fotiek nájdete na Instagrame a Facebooku</h2>
+                    <p>Pravidelne zverejňujeme hotové výrobky, expedície aj zábery z výroby.</p>
+                </div>
+                <div class="instagram-tlacidla">
+                    <a href="https://www.instagram.com/lxs.sro/" class="tlacidlo">Sledovať @lxs.sro</a>
+                    <a href="https://www.facebook.com/LXSsro" class="tlacidlo tlacidlo-obrys">Facebook</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- PÄTIČKA: rovnaká na každej stránke -->
+    <footer>
+        <!-- výzva nad pätičkou -->
+        <div class="paticka-vyzva">
+            <div>
+                <h2>Máte záujem o spoluprácu?</h2>
+                <p>Napíšte nám alebo zavolajte, radi vám pripravíme ponuku na mieru.</p>
+            </div>
+            <a href="kontakt.html" class="tlacidlo tlacidlo-biele">Kontaktujte nás</a>
+        </div>
+
+        <div class="paticka-stlpce">
+            <div class="paticka-firma">
+                <img src="obrazky/logo/lxs_logo.png" alt="LXS" class="paticka-logo">
+                <p>Výroba mobilných oceľových septikov, schodov k septikom a oceľových konštrukcií na mieru.</p>
+                <a href="https://www.instagram.com/lxs.sro/" class="socialna" aria-label="Instagram">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+                </a>
+                <a href="https://www.facebook.com/LXSsro" class="socialna" aria-label="Facebook">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M15 3h-2.5A3.5 3.5 0 0 0 9 6.5V10H6.5v3.5H9V21h3.5v-7.5H15l.5-3.5h-3V7a1 1 0 0 1 1-1H15z"/></svg>
+                </a>
+            </div>
+
+            <div>
+                <h3>Menu</h3>
+                <ul>
+                    <li><a href="index.html">Úvod</a></li>
+                    <li><a href="o-nas.html">O nás</a></li>
+                    <li><a href="o-nas.html#certifikaty">Certifikáty</a></li>
+                    <li><a href="o-nas.html#podporujeme">Podporujeme</a></li>
+                    <li><a href="galeria.html">Galéria</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3>Výrobky a služby</h3>
+                <ul>
+                    <li><a href="vyrobky.html#septik">Septiky</a></li>
+                    <li><a href="vyrobky.html#schody">Schody k septikom</a></li>
+                    <li><a href="sluzby.html#lplech">Laserové pálenie</a></li>
+                    <li><a href="sluzby.html#oplech">Ohýbanie plechov</a></li>
+                    <li><a href="sluzby.html#zvar">Robotické zváranie</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3>Kontakt</h3>
+                <ul class="paticka-kontakt">
+                    <li>LXS s.r.o.<br>Plevník-Drienové 176<br>018 26 Plevník-Drienové</li>
+                    <li><a href="tel:+421907795360">+421 907 795 360</a></li>
+                    <li><a href="mailto:media@lxs.eu">media@lxs.eu</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="paticka-spodok">
+            <p>© 2026 LXS s.r.o. Všetky práva vyhradené. · <a href="ochrana-osobnych-udajov.html">Ochrana osobných údajov</a></p>
+            <a href="#" class="hore">Späť hore ↑</a>
+        </div>
+    </footer>
+
+    <!-- JavaScript dávame na koniec, keď je už celá stránka načítaná -->
+    <script src="script.js"></script>
+</body>
+</html>
