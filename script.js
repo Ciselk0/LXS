@@ -247,6 +247,58 @@ if (sprava && model) {
 }
 
 
+// =========================================
+// KONTAKT – FORMULÁR CEZ E-MAIL (mailto)
+// Nič sa neposiela na server. Po kliknutí poskladáme z polí text
+// a otvoríme poštu návštevníka s pripraveným e-mailom.
+// =========================================
+const formular = document.querySelector("#kontaktny-formular");
+let pripravenyText = "";   // text správy si odložíme pre tlačidlo „Skopírovať“
+
+if (formular) {
+    formular.addEventListener("submit", function (udalost) {
+        udalost.preventDefault();   // zastaví klasické odoslanie (stránka sa neobnoví)
+
+        // 1. prečítame, čo človek vyplnil (.trim() odstráni medzery na krajoch)
+        const meno = document.querySelector("#meno").value.trim();
+        const telefon = document.querySelector("#telefon").value.trim();
+        const text = document.querySelector("#sprava").value.trim();
+
+        // 2. poskladáme predmet a telo e-mailu
+        let predmet = "Dopyt z webu – " + meno;
+        if (model) {
+            predmet = "Dopyt z webu – " + model + " – " + meno;
+        }
+        pripravenyText = text + "\n\n" + meno;
+        if (telefon) {
+            pripravenyText += "\nTelefón: " + telefon;
+        }
+
+        // 3. adresa mailto: – encodeURIComponent prevedie medzery, diakritiku
+        //    a nové riadky do tvaru, ktorý sa dá dať do odkazu
+        const odkaz = "mailto:lxs@lxs.eu"
+            + "?subject=" + encodeURIComponent(predmet)
+            + "&body=" + encodeURIComponent(pripravenyText);
+
+        // 4. otvoríme poštu a ukážeme záložnú možnosť
+        window.location.href = odkaz;
+        document.querySelector("#formular-zaloha").hidden = false;
+    });
+
+    // Tlačidlo „Skopírovať správu“ – vloží text do schránky
+    document.querySelector("#kopirovat-spravu").addEventListener("click", function () {
+        const tlacidlo = this;
+        navigator.clipboard.writeText("Pre: lxs@lxs.eu\n\n" + pripravenyText)
+            .then(function () {
+                tlacidlo.textContent = "Skopírované ✓";
+            })
+            .catch(function () {
+                tlacidlo.textContent = "Nepodarilo sa – napíšte na lxs@lxs.eu";
+            });
+    });
+}
+
+
 // Ochrana osobných údajov: keď adresa končí napr. #formular, rozbalí sa príslušná časť
 var castGdpr = location.hash ? document.querySelector('details' + location.hash) : null;
 if (castGdpr) {

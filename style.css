@@ -1862,6 +1862,82 @@ a.velkost {
     font-size: 16px;
 }
 
+/* Rýchly kontakt – dve veľké tlačidlá vedľa seba */
+.rychly-kontakt {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.rychly-kontakt-tlacidlo {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px;
+    border: 2px solid var(--petrol);
+    border-radius: 6px;
+    color: var(--petrol);
+    text-decoration: none;
+    line-height: 1.4;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.rychly-kontakt-tlacidlo strong {
+    font-family: var(--pismo-nadpisy);
+    font-size: 17px;
+}
+
+.rychly-kontakt-ikona {
+    flex-shrink: 0;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background-color: var(--koral);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rychly-kontakt-tlacidlo:hover {
+    background-color: var(--petrol);
+    color: #ffffff;
+}
+
+.formular-uvod {
+    margin-bottom: 16px;
+}
+
+.nepovinne {
+    font-weight: 400;
+    font-size: 13px;
+    color: #6b7a80;
+}
+
+.formular-zaloha {
+    margin-top: 16px;
+    padding: 16px;
+    background-color: #f4f6f7;
+    border-left: 4px solid var(--koral);
+    border-radius: 4px;
+}
+
+.formular-zaloha p {
+    margin: 0 0 12px;
+}
+
+.tlacidlo.tlacidlo-kopirovat {
+    background-color: var(--petrol);
+    box-shadow: none;
+}
+
+@media (max-width: 600px) {
+    .rychly-kontakt {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* =========================================
    PÄTIČKA
    ========================================= */

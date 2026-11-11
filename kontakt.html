@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="robots" content="noindex, nofollow">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Kontaktujte LXS s.r.o., Plevník-Drienové 176. Tel. +421 907 795 360, e-mail media@lxs.eu.">
+    <meta name="description" content="Kontaktujte LXS s.r.o., Plevník-Drienové 176. Tel. +421 42/444 22 20, e-mail lxs@lxs.eu.">
     <title>LXS – Kontakt</title>
     <!-- Písma Exo 2 a Open Sans z Google Fonts (rovnaké ako na lxs.eu) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -46,27 +46,52 @@
             <div class="dva-stlpce">
                 <div>
                     <h2>Napíšte nám</h2>
-                    <!-- Formulár zatiaľ nič neodosiela – doriešime s adminom -->
-                    <form class="formular">
-                        <label for="meno">Meno</label>
-                        <input type="text" id="meno" name="meno" required>
 
-                        <label for="email">E-mail</label>
-                        <input type="email" id="email" name="email" required>
+                    <!-- Rýchly kontakt: na mobile klik = hneď volá / píše -->
+                    <div class="rychly-kontakt">
+                        <a class="rychly-kontakt-tlacidlo" href="tel:+421424442220">
+                            <span class="rychly-kontakt-ikona" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+                            </span>
+                            <span><strong>Zavolajte nám</strong><br>+421 42/444 22 20</span>
+                        </a>
+                        <a class="rychly-kontakt-tlacidlo" href="mailto:lxs@lxs.eu">
+                            <span class="rychly-kontakt-ikona" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
+                            </span>
+                            <span><strong>Napíšte e-mail</strong><br>lxs@lxs.eu</span>
+                        </a>
+                    </div>
+
+                    <p class="formular-uvod">Alebo vyplňte formulár – po kliknutí na „Pripraviť e-mail“ sa vám otvorí vaša pošta s hotovou správou, stačí ju odoslať.</p>
+
+                    <!-- Formulár neodosiela na server: JavaScript z neho poskladá e-mail (mailto) -->
+                    <form class="formular" id="kontaktny-formular">
+                        <label for="meno">Meno</label>
+                        <input type="text" id="meno" name="meno" autocomplete="name" required>
+
+                        <label for="telefon">Telefón <span class="nepovinne">(nepovinné)</span></label>
+                        <input type="tel" id="telefon" name="telefon" autocomplete="tel">
 
                         <label for="sprava">Správa</label>
                         <textarea id="sprava" name="sprava" rows="5" required></textarea>
 
-                        <p class="formular-poznamka">Odoslaním formulára berete na vedomie <a href="ochrana-osobnych-udajov.html#formular">informácie o spracúvaní osobných údajov</a>.</p>
+                        <p class="formular-poznamka">Odoslaním správy berete na vedomie <a href="ochrana-osobnych-udajov.html#formular">informácie o spracúvaní osobných údajov</a>.</p>
 
-                        <button type="submit" class="tlacidlo">Odoslať</button>
+                        <button type="submit" class="tlacidlo">Pripraviť e-mail</button>
+
+                        <!-- Zobrazí sa po kliknutí – pre prípad, že sa pošta neotvorila -->
+                        <div class="formular-zaloha" id="formular-zaloha" hidden>
+                            <p>Neotvorila sa vám pošta? Skopírujte si správu a pošlite ju na <strong>lxs@lxs.eu</strong>, alebo nám zavolajte.</p>
+                            <button type="button" class="tlacidlo tlacidlo-kopirovat" id="kopirovat-spravu">Skopírovať správu</button>
+                        </div>
                     </form>
                 </div>
                 <div>
                     <h2>Kontaktné údaje</h2>
                     <p><strong>LXS s.r.o.</strong></p>
-                    <p>E-mail: <a href="mailto:media@lxs.eu">media@lxs.eu</a></p>
-                    <p>Telefón: <a href="tel:+421907795360">+421 907 795 360</a></p>
+                    <p>E-mail: <a href="mailto:lxs@lxs.eu">lxs@lxs.eu</a></p>
+                    <p>Telefón: <a href="tel:+421424442220">+421 42/444 22 20</a></p>
                     <p>Adresa:<br>
                         Plevník-Drienové 176<br>
                         018 26 Plevník-Drienové</p>
@@ -124,8 +149,8 @@
                 <h3>Kontakt</h3>
                 <ul class="paticka-kontakt">
                     <li>LXS s.r.o.<br>Plevník-Drienové 176<br>018 26 Plevník-Drienové</li>
-                    <li><a href="tel:+421907795360">+421 907 795 360</a></li>
-                    <li><a href="mailto:media@lxs.eu">media@lxs.eu</a></li>
+                    <li><a href="tel:+421424442220">+421 42/444 22 20</a></li>
+                    <li><a href="mailto:lxs@lxs.eu">lxs@lxs.eu</a></li>
                 </ul>
             </div>
         </div>
