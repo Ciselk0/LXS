@@ -668,8 +668,8 @@ nav a.aktivna {
    ========================================= */
 .certifikaty {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+    grid-template-columns: repeat(4, 1fr);     /* 7 certifikátov = 4 + 3 */
+    gap: 25px;
     margin-top: 40px;
 }
 

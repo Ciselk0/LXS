@@ -213,7 +213,18 @@ filtre.forEach(function (filter) {
         }
     });
     filter.insertAdjacentHTML("beforeend", '<span class="pocet-kat">' + n + '</span>');
+
+    // kategória bez fotiek sa skryje – keď pribudnú fotky, tlačidlo sa ukáže samo
+    if (n === 0) {
+        filter.hidden = true;
+    }
 });
+
+// koľko kategórií má aspoň jednu fotku ("Všetko" sa nepočíta)
+const pocetKategorii = document.querySelector("#pocet-kategorii");
+if (pocetKategorii) {
+    pocetKategorii.textContent = document.querySelectorAll('.filter:not([hidden]):not([data-kategoria="vsetko"])').length;
+}
 
 
 // =========================================

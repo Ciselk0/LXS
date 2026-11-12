@@ -38,7 +38,7 @@
                     <p class="cesta"><a href="index.html">Úvod</a> <span>/</span> Galéria</p>
                     <h1>Naša výroba <strong>na vlastné oči</strong></h1>
                     <p>Hotové septiky, schody aj zábery priamo z našej výroby a dvora v Plevníku-Drienovom.</p>
-                    <p class="pocet-fotiek"><span id="pocet">0</span> fotiek v 5 kategóriách</p>
+                    <p class="pocet-fotiek"><span id="pocet">0</span> fotiek v <span id="pocet-kategorii">0</span> kategóriách</p>
                     <div class="uvod-tlacidla">
                         <a href="#fotky" class="tlacidlo">Pozrieť fotky</a>
                     </div>
@@ -75,7 +75,7 @@
             </div>
 
             <!-- Fotky: data-kategoria hovorí, do ktorej skupiny fotka patrí.
-                 Zástupné fotky nahradíme skutočnými z obrazky/galeria/20ft atď. -->
+                 Filter, ku ktorému zatiaľ nie je žiadna fotka, sa sám skryje (script.js). -->
             <!-- Mozaika: položky s triedou "velka" zaberajú 2 × 2 políčka -->
             <div class="galeria mozaika">
                 <figure class="g-polozka velka">
@@ -90,37 +90,53 @@
                     <img src="obrazky/galeria/vyroba/zvaranie.webp" alt="Zváranie vo výrobe" data-kategoria="vyroba">
                     <figcaption><span>Zváranie vo výrobe</span><b aria-hidden="true">+</b></figcaption>
                 </figure>
-                <figure class="g-polozka">
-                    <img src="https://picsum.photos/800/600?random=1" alt="20 FT – zástupná fotka" data-kategoria="20ft">
-                    <figcaption><span>20 FT – zástupná fotka</span><b aria-hidden="true">+</b></figcaption>
-                </figure>
-                <figure class="g-polozka">
-                    <img src="https://picsum.photos/800/600?random=2" alt="20 FT – zástupná fotka" data-kategoria="20ft">
-                    <figcaption><span>20 FT – zástupná fotka</span><b aria-hidden="true">+</b></figcaption>
-                </figure>
                 <figure class="g-polozka velka">
-                    <img src="https://picsum.photos/800/600?random=3" alt="10 FT – zástupná fotka" data-kategoria="10ft">
-                    <figcaption><span>10 FT – zástupná fotka</span><b aria-hidden="true">+</b></figcaption>
+                    <img src="obrazky/galeria/08ft/08ft-klasik-1.webp" alt="08FT Klasik – pohľad z boku" data-kategoria="08ft" loading="lazy">
+                    <figcaption><span>08FT Klasik – pohľad z boku</span><b aria-hidden="true">+</b></figcaption>
                 </figure>
                 <figure class="g-polozka">
-                    <img src="https://picsum.photos/800/600?random=4" alt="10 FT – zástupná fotka" data-kategoria="10ft">
-                    <figcaption><span>10 FT – zástupná fotka</span><b aria-hidden="true">+</b></figcaption>
+                    <img src="obrazky/galeria/08ft/08ft-klasik-2.webp" alt="08FT Klasik – pohľad šikmo zhora" data-kategoria="08ft" loading="lazy">
+                    <figcaption><span>08FT Klasik – pohľad šikmo zhora</span><b aria-hidden="true">+</b></figcaption>
                 </figure>
                 <figure class="g-polozka">
-                    <img src="https://picsum.photos/800/600?random=5" alt="08 FT – zástupná fotka" data-kategoria="08ft">
-                    <figcaption><span>08 FT – zástupná fotka</span><b aria-hidden="true">+</b></figcaption>
+                    <img src="obrazky/galeria/08ft/08ft-klasik-3.webp" alt="08FT Klasik – čelo s kontajnerovými rohmi" data-kategoria="08ft" loading="lazy">
+                    <figcaption><span>08FT Klasik – čelo s kontajnerovými rohmi</span><b aria-hidden="true">+</b></figcaption>
                 </figure>
                 <figure class="g-polozka">
-                    <img src="https://picsum.photos/800/600?random=6" alt="08 FT – zástupná fotka" data-kategoria="08ft">
-                    <figcaption><span>08 FT – zástupná fotka</span><b aria-hidden="true">+</b></figcaption>
+                    <img src="obrazky/galeria/08ft/08ft-klasik-4.webp" alt="08FT Klasik – celý septik zhora" data-kategoria="08ft" loading="lazy">
+                    <figcaption><span>08FT Klasik – celý septik zhora</span><b aria-hidden="true">+</b></figcaption>
                 </figure>
                 <figure class="g-polozka">
-                    <img src="https://picsum.photos/800/600?random=7" alt="05 FT – zástupná fotka" data-kategoria="05ft">
-                    <figcaption><span>05 FT – zástupná fotka</span><b aria-hidden="true">+</b></figcaption>
+                    <img src="obrazky/galeria/08ft/08ft-klasik-5.webp" alt="08FT Klasik – plniace kapsy s viečkami" data-kategoria="08ft" loading="lazy">
+                    <figcaption><span>08FT Klasik – plniace kapsy s viečkami</span><b aria-hidden="true">+</b></figcaption>
                 </figure>
                 <figure class="g-polozka">
-                    <img src="https://picsum.photos/800/600?random=8" alt="05 FT – zástupná fotka" data-kategoria="05ft">
-                    <figcaption><span>05 FT – zástupná fotka</span><b aria-hidden="true">+</b></figcaption>
+                    <img src="obrazky/galeria/08ft/08ft-klasik-6.webp" alt="08FT Klasik – revízny otvor v streche" data-kategoria="08ft" loading="lazy">
+                    <figcaption><span>08FT Klasik – revízny otvor v streche</span><b aria-hidden="true">+</b></figcaption>
+                </figure>
+                <figure class="g-polozka">
+                    <img src="obrazky/galeria/08ft/08ft-klasik-7.webp" alt="08FT Klasik – detail kontajnerového rohu" data-kategoria="08ft" loading="lazy">
+                    <figcaption><span>08FT Klasik – detail kontajnerového rohu</span><b aria-hidden="true">+</b></figcaption>
+                </figure>
+                <figure class="g-polozka">
+                    <img src="obrazky/galeria/08ft/08ft-klasik-8.webp" alt="08FT Klasik – bok s vývodom a kapsami" data-kategoria="08ft" loading="lazy">
+                    <figcaption><span>08FT Klasik – bok s vývodom a kapsami</span><b aria-hidden="true">+</b></figcaption>
+                </figure>
+                <figure class="g-polozka">
+                    <img src="obrazky/galeria/08ft/08ft-klasik-9.webp" alt="08FT Klasik – šikmý pohľad na strechu" data-kategoria="08ft" loading="lazy">
+                    <figcaption><span>08FT Klasik – šikmý pohľad na strechu</span><b aria-hidden="true">+</b></figcaption>
+                </figure>
+                <figure class="g-polozka">
+                    <img src="obrazky/galeria/08ft/08ft-klasik-10.webp" alt="08FT Klasik – pohľad pred halou" data-kategoria="08ft" loading="lazy">
+                    <figcaption><span>08FT Klasik – pohľad pred halou</span><b aria-hidden="true">+</b></figcaption>
+                </figure>
+                <figure class="g-polozka">
+                    <img src="obrazky/galeria/08ft/08ft-klasik-11.webp" alt="08FT Klasik – bok s plniacimi kapsami" data-kategoria="08ft" loading="lazy">
+                    <figcaption><span>08FT Klasik – bok s plniacimi kapsami</span><b aria-hidden="true">+</b></figcaption>
+                </figure>
+                <figure class="g-polozka">
+                    <img src="obrazky/galeria/08ft/08ft-klasik-12.webp" alt="08FT Klasik – dlhý bok s otvormi pre vidlice" data-kategoria="08ft" loading="lazy">
+                    <figcaption><span>08FT Klasik – dlhý bok s otvormi pre vidlice</span><b aria-hidden="true">+</b></figcaption>
                 </figure>
             </div>
         </section>
